@@ -2,6 +2,22 @@
   "imports": {
     "tslib": "./dist/libs/tslib/tslib.min.js",
     "bootstrap": "./dist/libs/bootstrap/js/bootstrap.esm.min.js",
-    "@popperjs/core": "./dist/libs/@popperjs/core.min.js"
+    "@popperjs/core": "./dist/libs/@popperjs/core.min.js",
+    "rxjs": "./assets/libraries/rxjs/rxjs.js",
+    "rxjs/operators": "./assets/libraries/rxjs/rxjs.operators.js",
+    "rxjs/ajax": "./assets/libraries/rxjs/rxjs.ajax.js",
+    "rxjs/fetch": "./assets/libraries/rxjs/rxjs.fetch.js",
+    "rxjs/webSocker": "./assets/libraries/rxjs/rxjs.webSocker.js",
+    "@angular/core": "./assets/libraries/angular/core/core.prod.js",
+    "@angular/compiler": "./assets/libraries/angular/compiler/compiler.prod.js",
+    "@angular/common": "./assets/libraries/angular/common/common.prod.js",
+    "@angular/common/http": "./assets/libraries/angular/common/http.prod.js",
+    "@angular/forms": "./assets/libraries/angular/forms/forms.prod.js",
+    "@angular/animations": "./assets/libraries/angular/animations/animations.prod.js",
+    "@angular/animations/browser": "./assets/libraries/angular/animations/browser.prod.js",
+    "@angular/platform-browser": "./assets/libraries/angular/platform-browser/platform-browser.prod.js",
+    "@angular/platform-browser/animations": "./assets/libraries/angular/platform-browser/animations.prod.js",
+    "@angular/platform-browser-dynamic": "./assets/libraries/angular/platform-browser-dynamic/platform-browser-dynamic.prod.js",
+    "@angular/router": "./assets/libraries/angular/router/router.prod.js"
   }
 }

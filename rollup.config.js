@@ -22,7 +22,14 @@ export default {
   watch: { buildDelay: 500 },
   treeshake: production,
   external: [
-    'tslib', 'bootstrap', '@popperjs/core'
+    'tslib', 'bootstrap', '@popperjs/core',
+    'zone.js', 'rxjs', 'rxjs/operators',
+    '@angular/core', '@angular/compiler', '@angular/common',
+    '@angular/common/http', '@angular/forms',
+    '@angular/animations','@angular/animations/browser',
+    '@angular/platform-browser', '@angular/platform-browser/animations',
+    '@angular/platform-browser-dynamic',
+    '@angular/router'
   ],
   plugins: [
     // typescript({ tsconfig: 'tsconfig.json', sourceMap: !production }),
