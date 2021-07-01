@@ -11,7 +11,14 @@
     "rollup": "rollup -c rollup.config.js",
     "rollup-watch": "npm run rollup -- --watch",
     "start": "npm run clean && npm run copy && concurrently \"npm run browser-sync\" \"npm run rollup-watch\"",
-    "test": "test"
+    "test": "test",
+    "ng": "NG_PERSISTENT_BUILD_CACHE=1 ng",
+    "build-all": "npm run build-shared && npm run build-web && npm run build-handset",
+    "build-shared": "NG_PERSISTENT_BUILD_CACHE=1 ng build app-shared --configuration production",
+    "build-web": "NG_PERSISTENT_BUILD_CACHE=1 ng build web --configuration production --base-href=/net-core-app/web/",
+    "build-handset": "NG_PERSISTENT_BUILD_CACHE=1 ng build handset --configuration production --base-href=/net-core-app/handset/",
+    "watch-web": "NG_PERSISTENT_BUILD_CACHE=1 ng build web --watch --configuration development --base-href=/net-core-app/web/",
+    "watch-handset": "NG_PERSISTENT_BUILD_CACHE=1 ng build handset --watch --configuration development --base-href=/net-core-app/handset/"
   },
   "repository": {
     "type": "git",
@@ -28,18 +35,18 @@
   },
   "homepage": "https://github.com/beginor/rollup-starter#readme",
   "dependencies": {
-    "@angular/core": "~12.0.4",
-    "@angular/common": "~12.0.4",
-    "@angular/compiler": "~12.0.4",
-    "@angular/animations": "~12.0.4",
-    "@angular/forms": "~12.0.4",
-    "@angular/platform-browser": "~12.0.4",
-    "@angular/platform-browser-dynamic": "~12.0.4",
-    "@angular/router": "~12.0.4",
-    "@angular/cdk": "~12.0.4",
-    "@angular/material": "~12.0.4",
+    "@angular/animations": "~12.1.0",
+    "@angular/common": "~12.1.0",
+    "@angular/compiler": "~12.1.0",
+    "@angular/core": "~12.1.0",
+    "@angular/forms": "~12.1.0",
+    "@angular/platform-browser": "~12.1.0",
+    "@angular/platform-browser-dynamic": "~12.1.0",
+    "@angular/router": "~12.1.0",
+    "@angular/cdk": "~12.1.0",
+    "@angular/material": "~12.1.0",
     "rxjs": "~6.6.0",
-    "tslib": "^2.1.0",
+    "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -51,6 +58,9 @@
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.3.2",
-    "rollup-plugin-ngc": "^0.1.2"
+    "@angular-devkit/build-angular": "~12.1.0",
+    "@angular/cli": "~12.1.0",
+    "@angular/compiler-cli": "~12.1.0",
+    "ng-packagr": "^12.1.0"
   }
 }
