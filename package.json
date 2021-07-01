@@ -12,6 +12,7 @@
     "rollup-watch": "npm run rollup -- --watch",
     "start": "npm run clean && npm run copy-libs && concurrently 'npm run browser-sync' 'npm run rollup-watch'",
     "test": "echo test",
+    "ngc-web": "ngc -p projects/web/tsconfig.app.json",
     "ng": "NG_PERSISTENT_BUILD_CACHE=1 ng",
     "build-all": "npm run build-shared && npm run build-web && npm run build-handset",
     "build-shared": "NG_PERSISTENT_BUILD_CACHE=1 ng build app-shared --configuration production",
@@ -68,6 +69,7 @@
     "@angular-devkit/build-angular": "~12.1.0",
     "@angular/cli": "~12.1.0",
     "@angular/compiler-cli": "~12.1.0",
-    "ng-packagr": "^12.1.0"
+    "ng-packagr": "^12.1.0",
+    "rollup-plugin-ngc": "^0.1.2"
   }
 }

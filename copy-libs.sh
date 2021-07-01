@@ -12,7 +12,7 @@ cp -rv node_modules/bootstrap/dist dist/libs/bootstrap
 npx rollup -c rollup/rollup.popperjs.js
 ## rxjs
 rm -rf dist/libs/rxjs && mkdir dist/libs/rxjs
-npx rollup -c rollup/rollup.config.rxjs.js
+npx rollup -c rollup/rollup.rxjs.js
 ## zone.js
 rm -rf dist/libs/zone.js
 cp -r node_modules/zone.js/dist dist/libs/zone.js

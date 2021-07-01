@@ -8,7 +8,9 @@ import { environment } from './environments/environment';
 
 import 'zone.js';
 
-if (environment.production) {
+declare function isProd(): boolean;
+
+if (isProd()) {
   enableProdMode();
 }
 

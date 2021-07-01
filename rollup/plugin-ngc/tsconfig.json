@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "ES2015",
+    "moduleResolution": "Node",
+    "baseUrl": "./"
+  },
+  "files": [
+    "./index.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
