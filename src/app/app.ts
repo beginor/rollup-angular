@@ -1,15 +1,15 @@
 export class App {
 
     /** app title */
-    title: string = '';
+    public title = 'Hello, Rollup !';
 
-    constructor() { }
+    constructor(private container: HTMLElement) { }
 
     /**
      * run the app.
      */
-    run() {
-        console.log('Hello, Rollup!');
+    public run(): void {
+        this.container.innerHTML = `<h1>${this.title}</h1>`;
     }
 
 }
