@@ -2,7 +2,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../out-tsc/lib",
+    "outDir": "../../dist/out-tsc/app-shared",
     "target": "es2015",
     "declaration": true,
     "declarationMap": true,

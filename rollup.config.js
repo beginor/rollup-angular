@@ -19,7 +19,7 @@ export default [
       format: 'es',
       sourcemap: !production
     },
-    watch: { buildDelay: 500 },
+    watch: { buildDelay: 100 },
     treeshake: production,
     external: [
       'tslib', 'bootstrap', '@popperjs/core',
@@ -29,7 +29,10 @@ export default [
       '@angular/animations','@angular/animations/browser',
       '@angular/platform-browser', '@angular/platform-browser/animations',
       '@angular/platform-browser-dynamic',
-      '@angular/router'
+      '@angular/router', '@angular/localize', '@angular/localize/init',
+      '@angular/common/locales/zh-Hans',
+      '@angular/common/locales/extra/zh-Hans',
+      'app-shared'
     ],
     plugins: [
       // typescript({ tsconfig: 'tsconfig.json', sourceMap: !production }),
@@ -44,5 +47,21 @@ export default [
       })
     ],
     preserveEntrySignatures: false
+  },
+  {
+    input: 'dist/app-shared/fesm2015/app-shared.js',
+    output: {
+      file: 'dist/app-shared.js',
+      format: 'es',
+      sourcemap: !production
+    },
+    watch: { buildDelay: 500 },
+    treeshake: production,
+    external: ['@angular/core', '@angular/core'],
+    plugins: [
+      production && terser({
+        format: { comments: false }
+      })
+    ]
   }
 ]

@@ -12,7 +12,8 @@ import { SvgIconComponent } from './svg-icon/svg-icon.component';
   imports: [
   ],
   exports: [
-    AppSharedComponent
+    AppSharedComponent,
+    SvgIconComponent
   ]
 })
 export class AppSharedModule { }
