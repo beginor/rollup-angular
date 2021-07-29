@@ -1,7 +1,7 @@
 {
   "imports": {
     "tslib": "./dist/libs/tslib/tslib.js",
-    "bootstrap": "./dist/libs/bootstrap/js/bootstrap.esm.js",
+    "bootstrap": "./dist/libs/bootstrap/bootstrap.esm.js",
     "@popperjs/core": "./dist/libs/@popperjs/core.js",
     "zone.js": "./dist/libs/zone.js/zone.min.js",
     "rxjs": "./dist/libs/rxjs/rxjs.js",
