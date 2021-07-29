@@ -7,7 +7,7 @@ module.exports = {
   ],
   server: {
     baseDir: './',
-    directory: true,
+    directory: false,
     index: 'index.html'
   },
   open: false,

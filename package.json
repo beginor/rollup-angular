@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "npm run clean && npm run rollup && npm run copy-libs",
-    "build-app": "rm -rf dist/main.* dist/chunks && npm run ngc-web && npm run rollup",
+    "build-app": "rm -rf dist/main.* dist/app-shared.* dist/chunks && npm run ngc-web && npm run rollup",
     "clean": "rm -rf dist && mkdir dist",
     "copy-libs": "./copy-libs.sh",
     "browser-sync": "browser-sync start --config bs-config.js",
@@ -15,7 +15,7 @@
     "start": "npm run clean && npm run copy-libs && npm run dev",
     "test": "echo test",
     "ngcc": "NG_PERSISTENT_BUILD_CACHE=1 ngcc",
-    "ngc-web": "ngc -p projects/web/tsconfig.app.json",
+    "ngc-web": "ngc -p tsconfig.app.json",
     "ngc-web-watch": "npm run ngc-web -- -w",
     "watch-web": "concurrently 'npm run ngc-web-watch' 'npm run rollup-watch'",
     "ng": "NG_PERSISTENT_BUILD_CACHE=1 ng",

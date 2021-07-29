@@ -1,4 +1,21 @@
+import {
+    enableProdMode, ɵNgModuleFactory as NgModuleFactory
+} from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import { platformBrowser } from '@angular/platform-browser';
+
+import 'zone.js';
+import '@angular/localize/init';
+
+import zhHans from '@angular/common/locales/zh-Hans';
+import zhHansEx from '@angular/common/locales/extra/zh-Hans';
+
+import { AppModule } from './app.module';
+// import { environment } from '../environments/environment';
+
 import './app.scss';
+
+declare function isProd(): boolean;
 
 export class App {
 
@@ -11,8 +28,12 @@ export class App {
      * run the app.
      */
     public run(): void {
-        this.container.innerHTML = `<h1>${this.title}</h1>`;
-        this.container.className = 'app-header';
+        registerLocaleData(zhHans, 'zh-Hans', zhHansEx);
+        if (isProd()) {
+            enableProdMode();
+        }
+        platformBrowser().bootstrapModuleFactory(new NgModuleFactory(AppModule))
+            .catch(ex => console.error(ex));
     }
 
 }

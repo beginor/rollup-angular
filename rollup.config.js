@@ -12,7 +12,7 @@ const production = !process.env.ROLLUP_WATCH;
 /** @type { import('rollup').RollupOptions } */
 export default [
   {
-    input: ['./dist/out-tsc/web/main.js'],
+    input: ['./src/main.js'],
     output: {
       dir: 'dist',
       chunkFileNames: production ? "chunks/[name]-[hash].js" : "chunks/[name].js",
