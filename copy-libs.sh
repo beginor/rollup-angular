@@ -56,7 +56,4 @@ cp -v node_modules/@angular/localize/fesm2015/localize.js dist/libs/@angular/loc
 npx terser --comments false --module -o dist/libs/@angular/localize/localize.prod.js dist/libs/@angular/localize/localize.js
 cp -v node_modules/@angular/localize/fesm2015/init.js dist/libs/@angular/localize
 npx terser --comments false --module -o dist/libs/@angular/localize/init.prod.js dist/libs/@angular/localize/init.js
-mkdir dist/libs/@angular/common/locales
-cp -v node_modules/@angular/common/locales/zh*.mjs dist/libs/@angular/common/locales
-mkdir dist/libs/@angular/common/locales/extra
-cp -v node_modules/@angular/common/locales/extra/zh*.mjs dist/libs/@angular/common/locales/extra
+npx rollup -c rollup/rollup.ng-locales.js

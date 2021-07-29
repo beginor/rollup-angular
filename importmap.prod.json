@@ -22,8 +22,8 @@
     "@angular/router": "./dist/libs/@angular/router/router.prod.js",
     "@angular/localize": "./dist/libs/@angular/localize.prod.js",
     "@angular/localize/init": "./dist/libs/@angular/localize/init.prod.js",
-    "@angular/common/locales/zh-Hans": "./dist/libs/@angular/common/locales/zh-Hans.mjs",
-    "@angular/common/locales/extra/zh-Hans": "./dist/libs/@angular/common/locales/extra/zh-Hans.mjs",
+    "@angular/common/locales/zh-Hans": "./dist/libs/@angular/common/locales/zh-Hans.js",
+    "@angular/common/locales/extra/zh-Hans": "./dist/libs/@angular/common/locales/extra/zh-Hans.js",
     "app-shared": "./dist/app-shared.js"
   }
 }
