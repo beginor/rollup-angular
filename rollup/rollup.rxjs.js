@@ -1,5 +1,5 @@
 import nodeResolve from '@rollup/plugin-node-resolve';
-import { terser } from 'rollup-plugin-terser';
+import esbuild from 'rollup-plugin-esbuild';
 
 export default [
   createRollupConfig({
@@ -39,7 +39,7 @@ function createRollupConfig({ input, output, external = [] }) {
     external: external,
     plugins: [
       nodeResolve({ }),
-      terser({ format: { comments: false }})
+      esbuild({ minify: true, legalComments: 'none' })
     ]
   };
 }
