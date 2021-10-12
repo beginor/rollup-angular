@@ -17,6 +17,8 @@ import './app.scss';
 
 declare function isProd(): boolean;
 
+Object.assign(window, { ngDevMode: false, ngJitMode: false });
+
 export class App {
 
     /** app title */
