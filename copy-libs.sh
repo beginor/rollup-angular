@@ -59,9 +59,17 @@ npx esbuild --minify --legal-comments=external --charset=utf8 --log-level=error 
 npx rollup -c rollup/rollup.ng-locales.js
 # angular/cdk
 npx rollup -c rollup/rollup.ng-cdk.js
-npx esbuild --minify --legal-comments=external --charset=utf8 --log-level=error --outfile=dist/libs/@angular/cdk/cdk.prod.js dist/libs/@angular/cdk/cdk.js
+FILES=$(ls dist/libs/@angular/cdk/*.js)
+for file in $FILES
+do
+  npx esbuild --minify --legal-comments=external --charset=utf8 --log-level=error --outfile=$file.prod.js $file
+done
 cp -v node_modules/@angular/cdk/*.css dist/libs/@angular/cdk/
 # angular/material
 npx rollup -c rollup/rollup.ng-mat.js
-npx esbuild --minify --legal-comments=external --charset=utf8 --log-level=error --outfile=dist/libs/@angular/material/material.prod.js dist/libs/@angular/material/material.js
+FILES=$(ls dist/libs/@angular/material/*.js)
+for file in $FILES
+do
+  npx esbuild --minify --legal-comments=external --charset=utf8 --log-level=error --outfile=$file.prod.js $file
+done
 cp -vr node_modules/@angular/material/prebuilt-themes dist/libs/@angular/material/
