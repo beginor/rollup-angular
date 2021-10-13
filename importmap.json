@@ -79,6 +79,7 @@
     "@angular/material/toolbar": "./dist/libs/@angular/material/toolbar.js",
     "@angular/material/tooltip": "./dist/libs/@angular/material/tooltip.js",
     "@angular/material/tree": "./dist/libs/@angular/material/tree.js",
+    "@ng-bootstrap/ng-bootstrap": "./dist/libs/@ng-bootstrap/ng-bootstrap.js",
     "app-shared": "./dist/app-shared/fesm2015/app-shared.js"
   }
 }

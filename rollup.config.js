@@ -22,7 +22,7 @@ export default [
     treeshake: production,
     external: [
       'tslib', 'bootstrap', '@popperjs/core',
-      'zone.js', 'rxjs', /rxjs\/*/, /\@angular\/.*/,
+      'zone.js', 'rxjs', /rxjs\/*/, /\@angular\/.*/, /\@ng-bootstrap\/*/,
       'app-shared'
     ],
     plugins: [

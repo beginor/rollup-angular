@@ -73,3 +73,7 @@ do
   npx esbuild --minify --legal-comments=external --charset=utf8 --log-level=error --outfile=$file.prod.js $file
 done
 cp -vr node_modules/@angular/material/prebuilt-themes dist/libs/@angular/material/
+# ng-bootstrap
+mkdir dist/libs/@ng-bootstrap
+cp -v node_modules/@ng-bootstrap/ng-bootstrap/fesm2015/ng-bootstrap.js dist/libs/@ng-bootstrap
+npx esbuild --minify --legal-comments=external --charset=utf8 --log-level=error --outfile=dist/libs/@ng-bootstrap/ng-bootstrap.prod.js dist/libs/@ng-bootstrap/ng-bootstrap.js
