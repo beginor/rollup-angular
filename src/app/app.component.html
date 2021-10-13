@@ -1,26 +1,7 @@
-<lib-app-shared></lib-app-shared>
-<lib-svg-icon></lib-svg-icon>
-
-<p>
-  <button class="btn btn-primary" type="button" (click)="onClick($event)">Click Me.</button>
-</p>
-
-<p>
-  <button mat-button>Basic</button>
-  <button mat-button color="primary">Primary</button>
-  <button mat-button color="accent">Accent</button>
-  <button mat-button color="warn">Warn</button>
-  <button mat-button disabled>Disabled</button>
-  <a mat-button href="https://www.google.com/" target="_blank">Link</a>
-</p>
-
-<p>
-  <button mat-raised-button>Basic</button>
-  <button mat-raised-button color="primary">Primary</button>
-  <button mat-raised-button color="accent">Accent</button>
-  <button mat-raised-button color="warn">Warn</button>
-  <button mat-raised-button disabled>Disabled</button>
-  <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
-</p>
+<ul>
+  <li><a routerLink="/home">home module</a></li>
+  <li><a routerLink="/twbs">@ng-bootstrap/bootstrap module</a></li>
+  <li><a routerLink="/mat">@angular/material module</a></li>
+</ul>
 
 <router-outlet></router-outlet>

@@ -17,7 +17,7 @@ import './app.scss';
 
 declare function isProd(): boolean;
 
-Object.assign(window, { ngDevMode: false, ngJitMode: false });
+// Object.assign(window, { ngDevMode: true, ngJitMode: false });
 
 export class App {
 
