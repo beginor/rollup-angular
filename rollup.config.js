@@ -19,10 +19,10 @@ export default [
       sourcemap: !production
     },
     watch: { buildDelay: 0 },
-    treeshake: production,
+    treeshake: !!production,
     external: [
       'tslib', 'bootstrap', '@popperjs/core',
-      'zone.js', 'rxjs', /rxjs\/*/, /\@angular\/.*/, /\@ng-bootstrap\/*/,
+      'zone.js', /rxjs/, /\@angular/, /\@ng-bootstrap/, /ng-zorro-antd/,
       'app-shared'
     ],
     plugins: [

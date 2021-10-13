@@ -10,6 +10,9 @@ const routes: Routes = [
     },
     {
         path: 'mat', loadChildren: () => import('./mat/mat.module').then(m => m.MatModule)
+    },
+    {
+        path: 'antd', loadChildren: () => import('./antd/antd.module').then(m => m.AntdModule)
     }
 ];
 

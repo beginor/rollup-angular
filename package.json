@@ -56,7 +56,8 @@
     "@angular/localize": "~12.2.0",
     "devextreme": "^21.1.6",
     "devextreme-angular": "^21.1.6",
-    "@ng-bootstrap/ng-bootstrap": "^11.0.0-beta.2"
+    "@ng-bootstrap/ng-bootstrap": "^11.0.0-beta.2",
+    "ng-zorro-antd": "^12.0.1"
   },
   "devDependencies": {
     "@types/bootstrap": "^5.1.6",

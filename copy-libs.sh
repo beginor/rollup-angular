@@ -58,7 +58,8 @@ cp -v node_modules/@angular/localize/fesm2015/init.js dist/libs/@angular/localiz
 npx esbuild --minify --legal-comments=external --charset=utf8 --log-level=error --outfile=dist/libs/@angular/localize/init.prod.js dist/libs/@angular/localize/init.js
 npx rollup -c rollup/rollup.ng-locales.js
 # angular/cdk
-npx rollup -c rollup/rollup.ng-cdk.js
+mkdir dist/libs/@angular/cdk/
+cp -v node_modules/@angular/cdk/fesm2015/*.js dist/libs/@angular/cdk/
 FILES=$(ls dist/libs/@angular/cdk/*.js)
 for file in $FILES
 do
@@ -66,7 +67,8 @@ do
 done
 cp -v node_modules/@angular/cdk/*.css dist/libs/@angular/cdk/
 # angular/material
-npx rollup -c rollup/rollup.ng-mat.js
+mkdir dist/libs/@angular/material/
+cp -v node_modules/@angular/material/fesm2015/*.js dist/libs/@angular/material/
 FILES=$(ls dist/libs/@angular/material/*.js)
 for file in $FILES
 do
@@ -77,3 +79,13 @@ cp -vr node_modules/@angular/material/prebuilt-themes dist/libs/@angular/materia
 mkdir dist/libs/@ng-bootstrap
 cp -v node_modules/@ng-bootstrap/ng-bootstrap/fesm2015/ng-bootstrap.js dist/libs/@ng-bootstrap
 npx esbuild --minify --legal-comments=external --charset=utf8 --log-level=error --outfile=dist/libs/@ng-bootstrap/ng-bootstrap.prod.js dist/libs/@ng-bootstrap/ng-bootstrap.js
+# ng-zorro-antd
+mkdir dist/libs/ng-zorro-antd
+cp -v node_modules/ng-zorro-antd/fesm2015/*.js dist/libs/ng-zorro-antd/
+FILES=$(ls dist/libs/ng-zorro-antd/*.js)
+for file in $FILES
+do
+  npx esbuild --minify --legal-comments=external --charset=utf8 --log-level=error --outfile=$file.prod.js $file
+done
+mkdir dist/libs/ng-zorro-antd/themes/
+cp -v node_modules/ng-zorro-antd/*.css dist/libs/ng-zorro-antd/themes/
