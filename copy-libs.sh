@@ -57,3 +57,11 @@ npx esbuild --minify --legal-comments=external --charset=utf8 --log-level=error 
 cp -v node_modules/@angular/localize/fesm2015/init.js dist/libs/@angular/localize
 npx esbuild --minify --legal-comments=external --charset=utf8 --log-level=error --outfile=dist/libs/@angular/localize/init.prod.js dist/libs/@angular/localize/init.js
 npx rollup -c rollup/rollup.ng-locales.js
+# angular/cdk
+npx rollup -c rollup/rollup.ng-cdk.js
+npx esbuild --minify --legal-comments=external --charset=utf8 --log-level=error --outfile=dist/libs/@angular/cdk/cdk.prod.js dist/libs/@angular/cdk/cdk.js
+cp -v node_modules/@angular/cdk/*.css dist/libs/@angular/cdk/
+# angular/material
+npx rollup -c rollup/rollup.ng-mat.js
+npx esbuild --minify --legal-comments=external --charset=utf8 --log-level=error --outfile=dist/libs/@angular/material/material.prod.js dist/libs/@angular/material/material.js
+cp -vr node_modules/@angular/material/prebuilt-themes dist/libs/@angular/material/
