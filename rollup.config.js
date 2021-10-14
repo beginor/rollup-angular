@@ -18,15 +18,15 @@ export default [
       format: 'es',
       sourcemap: !production
     },
-    watch: { buildDelay: 0 },
-    treeshake: !!production,
+    watch: { clearScreen: false },
+    treeshake: production,
     external: [
       'tslib', 'bootstrap', '@popperjs/core',
       'zone.js', /rxjs/, /\@angular/, /\@ng-bootstrap/, /ng-zorro-antd/,
       'app-shared'
     ],
     plugins: [
-      esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: !!production }),
+      esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: production }),
       scss({
         output: 'dist/main.css', sass: require('sass'), sourceMap: !production,
         outputStyle: !production ? 'expanded' : 'compressed'
@@ -44,9 +44,9 @@ export default [
       format: 'es',
       sourcemap: !production
     },
-    watch: { buildDelay: 0 },
+    watch: { clearScreen: false },
     treeshake: production,
-    external: [/\@angular\/.*/],
+    external: [/\@angular/],
     plugins: [
       esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: !!production })
     ]
