@@ -9,35 +9,33 @@ import esbuild from 'rollup-plugin-esbuild';
 const production = !process.env.ROLLUP_WATCH;
 
 /** @type { import('rollup').RollupOptions } */
-export default [
-  {
-    input: ['./src/main.js'],
-    output: {
-      dir: 'dist',
-      chunkFileNames: production ? "chunks/[name]-[hash].js" : "chunks/[name].js",
-      format: 'es',
-      sourcemap: !production
-    },
-    watch: { clearScreen: false },
-    treeshake: production,
-    external: [
-      'tslib', 'bootstrap', '@popperjs/core',
-      'zone.js', /rxjs/, /\@angular/, /\@ng-bootstrap/,
-    ],
-    plugins: [
-      esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: false }),
-      scss({
-        output: 'dist/main.css', sass: require('sass'), sourceMap: !production,
-        outputStyle: !production ? 'expanded' : 'compressed'
-      }),
-      alias({
-        entries: [
-          { find: 'app-shared', replacement: './dist/app-shared/fesm2015/app-shared.js' }
-        ]
-      }),
-      nodeResolve({}),
-      commonjs({})
-    ],
-    preserveEntrySignatures: false
-  }
-]
+export default {
+  input: ['./src/main.ts'],
+  output: {
+    dir: 'dist',
+    chunkFileNames: production ? "chunks/[name]-[hash].js" : "chunks/[name].js",
+    format: 'es',
+    sourcemap: !production
+  },
+  watch: { clearScreen: false },
+  treeshake: production,
+  external: [
+    'tslib', 'bootstrap', '@popperjs/core',
+    'zone.js', /rxjs/, /\@angular/, /\@ng-bootstrap/,
+  ],
+  plugins: [
+    esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: production }),
+    scss({
+      output: 'dist/main.css', sass: require('sass'), sourceMap: !production,
+      outputStyle: !production ? 'expanded' : 'compressed'
+    }),
+    alias({
+      entries: [
+        { find: 'app-shared', replacement: './dist/app-shared/fesm2015/app-shared.js' }
+      ]
+    }),
+    nodeResolve({}),
+    commonjs({})
+  ],
+  preserveEntrySignatures: false
+}
