@@ -10,7 +10,9 @@ const production = !process.env.ROLLUP_WATCH;
 
 /** @type { import('rollup').RollupOptions } */
 export default {
-  input: ['./src/main.ts'],
+  input: [
+    './src/main.ts'
+  ],
   output: {
     dir: 'dist',
     chunkFileNames: production ? "chunks/[name]-[hash].js" : "chunks/[name].js",
@@ -24,7 +26,7 @@ export default {
     'zone.js', /rxjs/, /\@angular/, /\@ng-bootstrap/,
   ],
   plugins: [
-    esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: production }),
+    esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: false, legalComments: 'none' }),
     scss({
       output: 'dist/main.css', sass: require('sass'), sourceMap: !production,
       outputStyle: !production ? 'expanded' : 'compressed'
