@@ -79,7 +79,6 @@
     "@angular/material/toolbar": "./dist/libs/@angular/material/toolbar.js.prod.js",
     "@angular/material/tooltip": "./dist/libs/@angular/material/tooltip.js.prod.js",
     "@angular/material/tree": "./dist/libs/@angular/material/tree.js.prod.js",
-    "@ng-bootstrap/ng-bootstrap": "./dist/libs/@ng-bootstrap/ng-bootstrap.prod.js",
-    "app-shared": "./dist/app-shared.js"
+    "@ng-bootstrap/ng-bootstrap": "./dist/libs/@ng-bootstrap/ng-bootstrap.prod.js"
   }
 }
