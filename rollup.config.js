@@ -11,7 +11,7 @@ const production = !process.env.ROLLUP_WATCH;
 /** @type { import('rollup').RollupOptions } */
 export default {
   input: [
-    './src/main.ts'
+    './src/main.js'
   ],
   output: {
     dir: 'dist',
