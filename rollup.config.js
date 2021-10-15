@@ -22,33 +22,22 @@ export default [
     treeshake: production,
     external: [
       'tslib', 'bootstrap', '@popperjs/core',
-      'zone.js', /rxjs/, /\@angular/, /\@ng-bootstrap/, /ng-zorro-antd/,
-      'app-shared'
+      'zone.js', /rxjs/, /\@angular/, /\@ng-bootstrap/,
     ],
     plugins: [
-      esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: production }),
+      esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: false }),
       scss({
         output: 'dist/main.css', sass: require('sass'), sourceMap: !production,
         outputStyle: !production ? 'expanded' : 'compressed'
       }),
-      alias({}),
+      alias({
+        entries: [
+          { find: 'app-shared', replacement: './dist/app-shared/fesm2015/app-shared.js' }
+        ]
+      }),
       nodeResolve({}),
       commonjs({})
     ],
     preserveEntrySignatures: false
-  },
-  {
-    input: 'dist/app-shared/fesm2015/app-shared.js',
-    output: {
-      file: 'dist/app-shared.js',
-      format: 'es',
-      sourcemap: !production
-    },
-    watch: { clearScreen: false },
-    treeshake: production,
-    external: [/\@angular/],
-    plugins: [
-      esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: !!production })
-    ]
   }
 ]
