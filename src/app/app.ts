@@ -1,6 +1,4 @@
-import {
-    enableProdMode, ɵNgModuleFactory as NgModuleFactory
-} from '@angular/core';
+import { enableProdMode } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import { platformBrowser } from '@angular/platform-browser';
 
@@ -17,8 +15,6 @@ import './app.scss';
 
 declare function isProd(): boolean;
 
-// Object.assign(window, { ngDevMode: true, ngJitMode: false });
-
 export class App {
 
     /** app title */
@@ -34,7 +30,7 @@ export class App {
         if (isProd()) {
             enableProdMode();
         }
-        platformBrowser().bootstrapModuleFactory(new NgModuleFactory(AppModule))
+        platformBrowser().bootstrapModule(AppModule)
             .catch(ex => console.error(ex));
     }
 

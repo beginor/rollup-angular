@@ -1,3 +1,5 @@
+import '@angular/compiler';
+
 import './main.scss';
 
 import('./app/app').then(m => {

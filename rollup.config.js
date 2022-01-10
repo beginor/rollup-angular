@@ -33,7 +33,7 @@ export default {
     }),
     alias({
       entries: [
-        { find: 'app-shared', replacement: './dist/app-shared/fesm2015/app-shared.js' }
+        { find: 'app-shared', replacement: './dist/app-shared/fesm2020/app-shared.mjs' }
       ]
     }),
     nodeResolve({}),
