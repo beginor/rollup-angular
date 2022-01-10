@@ -16,7 +16,7 @@
     "start": "npm run clean && npm run copy-libs && npm run dev",
     "test": "echo test",
     "ngcc": "NG_PERSISTENT_BUILD_CACHE=1 ngcc",
-    "ngc-web": "ngc -p tsconfig.app.json",
+    "ngc-web": "NG_PERSISTENT_BUILD_CACHE=1 ngc -p tsconfig.app.json",
     "ngc-web-watch": "npm run ngc-web -- -w",
     "watch-web": "concurrently 'npm run ngc-web-watch' 'npm run rollup-watch'",
     "ng": "NG_PERSISTENT_BUILD_CACHE=1 ng",
