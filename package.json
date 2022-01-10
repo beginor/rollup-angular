@@ -15,12 +15,12 @@
     "dev": "npm run clean-app && concurrently 'npm run browser-sync' 'npm run rollup-watch' 'npm run ngc-web-watch'",
     "start": "npm run clean && npm run copy-libs && npm run dev",
     "test": "echo test",
-    "ngcc": "NG_PERSISTENT_BUILD_CACHE=1 ngcc",
-    "ngc-web": "NG_PERSISTENT_BUILD_CACHE=1 ngc -p tsconfig.app.json",
+    "ngcc": "ngcc",
+    "ngc-web": "ngc -p tsconfig.app.json",
     "ngc-web-watch": "npm run ngc-web -- -w",
     "watch-web": "concurrently 'npm run ngc-web-watch' 'npm run rollup-watch'",
-    "ng": "NG_PERSISTENT_BUILD_CACHE=1 ng",
-    "build-shared": "NG_PERSISTENT_BUILD_CACHE=1 ng build app-shared --configuration development"
+    "ng": "ng",
+    "build-shared": "ng build app-shared --configuration development"
   },
   "repository": {
     "type": "git",
