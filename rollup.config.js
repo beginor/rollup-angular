@@ -23,7 +23,7 @@ export default {
   treeshake: production,
   external: [
     'tslib', 'bootstrap', '@popperjs/core',
-    'zone.js', /rxjs/, /\@angular\//, /\@ng-bootstrap/,
+    'zone.js', /rxjs/, /@angular/, /@ng-bootstrap/,
   ],
   plugins: [
     esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: production, legalComments: 'none' }),
