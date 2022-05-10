@@ -24,6 +24,7 @@ export default {
   external: [
     'tslib', 'bootstrap', '@popperjs/core',
     'zone.js', /rxjs/, /@angular/, /@ng-bootstrap/,
+    'ng-zorro', 'projects/ng-zorro'
   ],
   plugins: [
     esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: production, legalComments: 'none' }),
@@ -33,7 +34,8 @@ export default {
     }),
     alias({
       entries: [
-        { find: 'app-shared', replacement: './dist/app-shared/fesm2020/app-shared.mjs' }
+        { find: 'app-shared', replacement: './dist/app-shared/fesm2020/app-shared.mjs' },
+        { find: 'projects/ng-zorro', replacement: 'ng-zorro' }
       ]
     }),
     nodeResolve({}),
