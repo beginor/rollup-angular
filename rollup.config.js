@@ -3,6 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import scss from 'rollup-plugin-scss';
 import esbuild from 'rollup-plugin-esbuild';
+import replace from "@rollup/plugin-replace";
 
 // `pnpm run build` -> `production` is true
 // `pnpm run dev` -> `production` is false
@@ -24,7 +25,7 @@ export default {
   external: [
     'tslib', 'bootstrap', '@popperjs/core',
     'zone.js', /rxjs/, /@angular/, /@ng-bootstrap/,
-    'ng-zorro', 'projects/ng-zorro'
+    /ng-zorro-antd/
   ],
   plugins: [
     esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: production, legalComments: 'none' }),
@@ -34,9 +35,19 @@ export default {
     }),
     alias({
       entries: [
-        { find: 'app-shared', replacement: './dist/app-shared/fesm2020/app-shared.mjs' },
-        { find: 'projects/ng-zorro', replacement: 'ng-zorro' }
+        { find: 'app-shared', replacement: './dist/app-shared/fesm2020/app-shared.mjs' }
       ]
+    }),
+    replace({
+      preventAssignment: true,
+      values: {
+        'ng-zorro-antd/button': 'ng-zorro-antd',
+        'ng-zorro-antd/core/wave': 'ng-zorro-antd',
+        'ng-zorro-antd/core/transition-patch': 'ng-zorro-antd',
+        'ng-zorro-antd/layout': 'ng-zorro-antd',
+        'ng-zorro-antd/table': 'ng-zorro-antd',
+        'ng-zorro-antd/menu': 'ng-zorro-antd',
+      }
     }),
     nodeResolve({}),
     commonjs({})
