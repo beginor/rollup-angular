@@ -6,6 +6,6 @@ package-lock.json
 pnpm-lock.yaml
 .idea
 out-tsc
-src/**/*.js
-src/**/*.js.map
+projects/**/*.js
+projects/**/*.js.map
 .angular
