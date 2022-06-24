@@ -90,7 +90,7 @@
               "projects/web/src/assets"
             ],
             "styles": [
-              "src/main.scss"
+              "projects/web/src/main.scss"
             ],
             "scripts": []
           },
