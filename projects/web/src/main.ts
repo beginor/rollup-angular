@@ -1,8 +1,8 @@
 import '@angular/compiler';
 
-import './main.scss';
+import './main.css';
 
-import('./app/app').then(m => {
+import('./app').then(m => {
     const elementId = 'app';
     const container = document.getElementById(elementId);
     if (!container) {
