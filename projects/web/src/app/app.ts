@@ -11,7 +11,7 @@ import zhHansEx from '@angular/common/locales/extra/zh-Hans';
 import { AppModule } from './app.module';
 // import { environment } from '../environments/environment';
 
-import './app.scss';
+import './app.css';
 
 declare function isProd(): boolean;
 

@@ -47,7 +47,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss",
+          "style": "css",
           "skipTests": true
         },
         "@schematics/angular:class": {
@@ -77,20 +77,20 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:browser-esbuild",
           "options": {
             "outputPath": "dist/web",
             "index": "projects/web/src/index.html",
             "main": "projects/web/src/main.ts",
             "polyfills": "projects/web/src/polyfills.ts",
             "tsConfig": "projects/web/tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
+            "inlineStyleLanguage": "css",
             "assets": [
               "projects/web/src/favicon.ico",
               "projects/web/src/assets"
             ],
             "styles": [
-              "projects/web/src/main.scss"
+              "projects/web/src/main.css"
             ],
             "scripts": []
           },
