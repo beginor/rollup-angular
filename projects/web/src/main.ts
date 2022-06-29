@@ -2,7 +2,7 @@ import '@angular/compiler';
 
 import './main.css';
 
-import('./app').then(m => {
+import('./app/app').then(m => {
     const elementId = 'app';
     const container = document.getElementById(elementId);
     if (!container) {
