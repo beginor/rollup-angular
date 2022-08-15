@@ -1,7 +1,7 @@
 {
-  "name": "rollup-starter",
+  "name": "@beginor/rollup-angular",
   "version": "1.0.0",
-  "description": "rollup starter kit",
+  "description": "rollup angular starter kit",
   "main": "index.html",
   "scripts": {
     "build": "pnpm run clean && pnpm run rollup  && pnpm run sass",
@@ -21,7 +21,7 @@
     "ngc-web-watch": "pnpm run ngc-web -w",
     "watch-web": "concurrently 'pnpm run ngc-web-watch' 'pnpm run rollup-watch'",
     "ng": "ng",
-    "build-shared": "ng build app-shared --configuration development"
+    "build-shared": "ng build app-shared --configuration production"
   },
   "repository": {
     "type": "git",
