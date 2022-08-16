@@ -12,7 +12,7 @@ const production = !process.env.ROLLUP_WATCH;
 /** @type { import('rollup').RollupOptions } */
 export default {
   input: [
-    './projects/web/src/main.js'
+    './projects/web/out-tsc/main.js'
   ],
   output: {
     dir: 'dist',
@@ -30,7 +30,7 @@ export default {
   plugins: [
     esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: production, legalComments: 'none' }),
     scss({
-      output: 'dist/app.css', sass: require('sass'), sourceMap: !production,
+      output: 'dist/main.css', sass: require('sass'), sourceMap: !production,
       outputStyle: !production ? 'expanded' : 'compressed'
     }),
     alias({
